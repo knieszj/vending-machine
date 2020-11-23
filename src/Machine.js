@@ -1,6 +1,7 @@
 class Machine {
   constructor() {
     this.snacks = []
+    this.totalDeposited = []
   }
 
   seeSelections() {
@@ -13,6 +14,19 @@ class Machine {
     }
     this.snacks = inventory
   }
+
+  depositMoney(depositAmount){
+    this.totalDeposited.push(depositAmount)
+    
+    return this.totalAmount();
+  }
+
+  totalAmount(){
+    return this.totalDeposited.reduce((acc, add) => acc + add)
+    
+  }
+
 }
 
 module.exports = Machine
+
